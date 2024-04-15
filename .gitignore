@@ -1,0 +1,6 @@
+*.code-workspace
+.DS_Store
+htmlBoilerplate/
+
+# DISABLED, COMMENT TO RE-ENABLE
+resume/
