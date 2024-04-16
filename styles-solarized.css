@@ -1,0 +1,135 @@
+:root {
+    --base03: #002b36;
+    --base02: #073642;
+    --base01: #586e75;
+    --base00: #657b83;
+    --base0: #839496;
+    --base1: #93a1a1;
+    --base2: #eee8d5;
+    --base3: #fdf6e3;
+    --yellow: #b58900;
+    --orange: #cb4b16;
+    --red: #dc322f;
+    --magenta: #d33682;
+    --violet: #6c71c4;
+    --blue: #268bd2;
+    --cyan: #2aa198;
+    --green: #859900;
+
+    /* defaults for light mode */
+    --text: var(--base00);
+    --textHL: var(--base01);
+    --textLL: var(--base1);
+    --background: var(--base3);
+    --backgroundHL: var(--base2);
+}
+
+/* resetting vars for dark */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text: var(--base0);
+        --textHL: var(--base1);
+        --textLL: var(--base01);
+        --background: var(--base03);
+        --backgroundHL: var(--base02);
+    }
+}
+
+html {
+    font-family: Verdana, Arial, sans-serif;
+    background-color: var(--background);
+    color: var(--text);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    width: 100dvw;
+    height: 100dvh;
+}
+
+/* SHOULD AUTOMATICALLY APPLY ON CHANGE */
+/* 
+@media (prefers-color-scheme: dark) {
+    html {
+        background-color: var(--base03);
+        color: var(--base0);
+    }
+} */
+
+.navbar {
+    display: flex;
+    align-items: center;
+    background-color: var(--backgroundHL);
+    color: var(--text);
+    height: 5dvh;
+}
+
+.navLeft {
+    flex: 1;
+    display: flex;
+    margin: 20px;
+    gap: 20px;
+}
+
+.navRight {
+    flex: 2;
+}
+
+.navList {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    margin: 20px;
+    gap: 20px;
+}
+
+.navList li {
+    list-style-type: none;
+}
+
+.navList li:hover {
+    font-size: large;
+}
+
+.navList a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navLogo {
+    height: 10pt;
+    width: 10pt;
+}
+
+.mainContent {
+    display: flex;
+    height: 100%;
+    border: red 1px solid;
+}
+
+.leftContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border: blue 1px solid;
+}
+
+.rightContent {
+    flex: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border: green 1px solid;
+    gap: 20px;
+}
+
+.rightContent img {
+    max-width: 200px;
+    max-height: 200px;
+    border-radius: 30px;
+}
