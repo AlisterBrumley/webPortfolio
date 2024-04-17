@@ -36,7 +36,7 @@
 }
 
 html {
-    font-family: Verdana, Arial, sans-serif;
+    font-family: monospace;
     background-color: var(--background);
     color: var(--text);
 }
@@ -88,10 +88,12 @@ body {
 
 .navList li {
     list-style-type: none;
+    transition-duration: 0.2s
 }
 
 .navList li:hover {
     font-size: large;
+    transition-duration: 0.2s;
 }
 
 .navList a {
@@ -107,7 +109,7 @@ body {
 .mainContent {
     display: flex;
     height: 100%;
-    border: red 1px solid;
+    /* border: red 1px solid; */
 }
 
 .leftContent {
@@ -115,7 +117,45 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    border: blue 1px solid;
+    /* border: blue 1px solid; */
+}
+
+.nameTag {
+    font-size: 3em;
+    font-weight: bolder;
+    animation: opacity 1s, shadow 1s ;
+    filter: drop-shadow(16px 16px 30px var(--textLL)) opacity(100%)
+}
+
+.summary {
+    font-size: 1em;
+    animation: opacity 5s;
+}
+
+@keyframes shadow {
+    0% {
+        filter: drop-shadow(16px 16px 3px var(--textLL));
+    }
+
+    25% {
+        filter: drop-shadow(16px 16px 3px var(--textLL));
+    }
+
+    100% {
+        filter: drop-shadow(16px 16px 30px var(--textLL));
+    }
+
+}
+
+@keyframes opacity {
+    0% {
+        opacity: 0%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+
 }
 
 .rightContent {
@@ -124,12 +164,43 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    border: green 1px solid;
+    /* border: green 1px solid; */
+}
+
+.imgContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 70%;
     gap: 20px;
 }
 
-.rightContent img {
-    max-width: 200px;
-    max-height: 200px;
-    border-radius: 30px;
+.imgContainer img {
+    width: 12dvw;
+    height: auto;
+    border-radius: 20px;
+    filter: grayscale();
+    transition-duration: 0.2s;
+}
+
+.imgContainer img:hover {
+    width: 15dvw;
+    height: auto;
+    filter: none;
+    transition-duration: 0.5s;
+}
+
+.imgContainer img:active {
+    filter: contrast(50%);
+    transition-duration: 0ms;
+}
+
+
+/* FOR MOBILE */
+@media (max-width: 800px) {
+    .mainContent {
+        flex-direction: column;
+    }
 }
