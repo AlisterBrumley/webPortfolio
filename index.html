@@ -11,7 +11,7 @@
 
 <body>
     <div class="navbar">
-        <div class="navLeft">THIS AREA HERE</div>
+        <div class="navLeft">AB</div>
         <div class="navRight">
             <ul class="navList">
                 <li><a href="doc/AlisterBrumley_Resume.docx"><img class="navLogo" src="img/doc.png"
@@ -27,18 +27,22 @@
     <div class="mainContent">
         <div class="leftContent">
             <dir class="nameTag">Alister Brumley</dir>
-            <dir class="summary">A LITTLE SUMMARY, SOME WORDS ON A PAGE, PERHAPS A FEW NEWLINES! <br> ITS ALL OVER THE PLACE WHO CAN SAY!</dir>
+            <dir class="summary">A LITTLE SUMMARY, SOME WORDS ON A PAGE, PERHAPS A FEW NEWLINES! <br> ITS ALL OVER THE
+                PLACE WHO CAN SAY!</dir>
         </div>
         <div class="rightContent">
             <div class="imgContainer">
-                <img src="img/calcDark.png" alt="calculator example">
-                <img src="img/etchDark.png" alt="etch example">
-                <img src="img/qndDark.png" alt="audio degrader example">
-                <!-- SHOULD BREAK HERE AND NEWLINE
-            USE FLEXBOX THO! -->
-                <img src="img/calcLight.png" alt="temp">
-                <img src="img/etchLight.png" alt="temp">
-                <img src="img/qndLight.png" alt="temp">
+                <div class="imgRow">
+                    <img src="img/calcDark.png" alt="calculator example" class="exampleImage" id="imgTopL">
+                    <img src="img/etchDark.png" alt="etch example" class="exampleImage" id="imgTopC">
+                    <img src="img/qndDark.png" alt="audio degrader example" class="exampleImage" id="imgTopR">
+                </div>
+                <div class="summaryRow"><p id="exampleSummary" class="active"></p></div>
+                <div class="imgRow">
+                    <img src="img/calcLight.png" alt="temp" class="exampleImage" id="imgBotL">
+                    <img src="img/etchLight.png" alt="temp" class="exampleImage" id="imgBotC">
+                    <img src="img/qndLight.png" alt="temp" class="exampleImage" id="imgBotR">
+                </div>
             </div>
         </div>
     </div>

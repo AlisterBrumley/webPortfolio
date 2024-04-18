@@ -123,7 +123,7 @@ body {
 .nameTag {
     font-size: 3em;
     font-weight: bolder;
-    animation: opacity 1s, shadow 1s ;
+    animation: opacity 1s, shadow 1s;
     filter: drop-shadow(16px 16px 30px var(--textLL)) opacity(100%)
 }
 
@@ -169,15 +169,21 @@ body {
 
 .imgContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    flex-wrap: wrap;
     width: 70%;
+    gap: 10px;
+}
+
+.imgRow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     gap: 20px;
 }
 
-.imgContainer img {
+.exampleImage {
     width: 12dvw;
     height: auto;
     border-radius: 20px;
@@ -185,17 +191,58 @@ body {
     transition-duration: 0.2s;
 }
 
-.imgContainer img:hover {
-    width: 15dvw;
-    height: auto;
+.exampleImage:hover {
+    transform: scale(1.3);
+    z-index: 1;
+    position: relative;
     filter: none;
     transition-duration: 0.5s;
+}
+
+#imgTopL:hover {
+    transform-origin: right bottom;
+}
+
+#imgTopC:hover {
+    transform-origin: center bottom;
+}
+
+#imgTopR:hover {
+    transform-origin: left bottom;
+}
+
+#imgBotL:hover {
+    transform-origin: right top;
+}
+
+#imgBotC:hover {
+    transform-origin: center top;
+}
+
+#imgBotR:hover {
+    transform-origin: left top;
 }
 
 .imgContainer img:active {
     filter: contrast(50%);
     transition-duration: 0ms;
 }
+
+.summaryRow {
+    background-color: var(--backgroundHL);
+    width: 80%;
+    border-radius: 30px;
+}
+
+.summaryRow p {
+    margin: 20px;
+    display: none;
+}
+
+.active {
+    height: 10dvw;
+}
+
 
 
 /* FOR MOBILE */
