@@ -101,9 +101,14 @@ body {
     color: inherit;
 }
 
+.navIcon {
+    height: 1.25vh;
+    width: auto;
+}
+
 .navLogo {
-    height: 10pt;
-    width: 10pt;
+    height: 2vh;
+    filter:invert() drop-shadow(3px 3px 5px);
 }
 
 .mainContent {
