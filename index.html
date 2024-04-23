@@ -27,20 +27,41 @@
     <div class="mainContent">
         <div class="leftContent">
             <dir class="nameTag">Alister Brumley</dir>
-            <dir class="summary">A LITTLE SUMMARY, SOME WORDS ON A PAGE, PERHAPS A FEW NEWLINES! <br> THIS WILL BE A LITTLE BIO!</dir>
+            <dir class="summary">A LITTLE SUMMARY, SOME WORDS ON A PAGE, PERHAPS A FEW NEWLINES! <br> THIS WILL BE A
+                LITTLE BIO!</dir>
         </div>
         <div class="rightContent">
             <div class="imgContainer">
                 <div class="imgRow">
-                    <img src="img/calcLight.png" alt="calculator example" class="exampleImage" id="imgTopL">
-                    <img src="img/etchLight.png" alt="etch example" class="exampleImage" id="imgTopC">
-                    <img src="img/qndLight.png" alt="audio degrader example" class="exampleImage" id="imgTopR">
+                    <picture>
+                        <source srcset="img/calcLight.png" media="(prefers-color-scheme:dark)">
+                        <img src="img/calcDark.png" alt="calculator example" class="exampleImage" id="imgTopL">
+                    </picture>
+                    <picture>
+                        <source srcset="img/etchLight.png" media="(prefers-color-scheme:dark)">
+                        <img src="img/etchDark.png" alt="etch example" class="exampleImage" id="imgTopC">
+                    </picture>
+                    <picture>
+                        <source srcset="img/qndLight.png" media="(prefers-color-scheme:dark)">
+                        <img src="img/qndDark.png" alt="audio degrader example" class="exampleImage" id="imgTopR">
+                    </picture>
                 </div>
-                <div class="summaryRow"><p id="exampleSummary" class="active"></p></div>
+                <div class="summaryRow">
+                    <p id="exampleSummary" class="active"></p>
+                </div>
                 <div class="imgRow">
-                    <img src="img/wmvtoh264Light.png" alt="temp" class="exampleImage" id="imgBotL">
-                    <img src="img/esf2Light.png" alt="temp" class="exampleImage" id="imgBotC">
-                    <img src="img/qndDark.png" alt="temp" class="exampleImage" id="imgBotR">
+                    <picture>
+                        <source srcset="img/wmvtoh264Light.png" media="(prefers-color-scheme:dark)">
+                        <img src="img/wmvtoh264Dark.png" alt="wmv to h264 example" class="exampleImage" id="imgBotL">
+                    </picture>
+                    <picture>
+                        <source srcset="img/esf2Light.png" media="(prefers-color-scheme:dark)">
+                        <img src="img/esf2Dark.png" alt="extract sf2 example" class="exampleImage" id="imgBotC">
+                    </picture>
+                    <picture>
+                        <source srcset="img/multiLight.png" media="(prefers-color-scheme:dark)">
+                        <img src="img/multiDark.png" alt="multi langauge example" class="exampleImage" id="imgBotR">
+                    </picture>
                 </div>
             </div>
         </div>

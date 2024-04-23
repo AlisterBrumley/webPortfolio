@@ -65,6 +65,7 @@ body {
     background-color: var(--backgroundHL);
     color: var(--text);
     height: 5dvh;
+    font-size: 1vh;
 }
 
 .navLeft {
@@ -92,7 +93,7 @@ body {
 }
 
 .navList li:hover {
-    font-size: large;
+    font-size: 2rem;
     transition-duration: 0.2s;
 }
 
@@ -108,7 +109,7 @@ body {
 
 .navLogo {
     height: 2vh;
-    filter:invert() drop-shadow(3px 3px 5px);
+    filter: invert() drop-shadow(3px 3px 5px);
 }
 
 .mainContent {
@@ -189,11 +190,11 @@ body {
 }
 
 .exampleImage {
-    width: 12dvw;
-    height: auto;
     border-radius: 20px;
     filter: grayscale();
     transition-duration: 0.2s;
+    width: auto;
+    height: 20dvh;
 }
 
 .exampleImage:hover {
@@ -201,7 +202,7 @@ body {
     z-index: 1;
     position: relative;
     filter: none;
-    transition-duration: 0.5s;
+    transition-duration: 0.2s;
 }
 
 #imgTopL:hover {
@@ -251,8 +252,19 @@ body {
 
 
 /* FOR MOBILE */
-@media (max-width: 800px) {
+@media (orientation: portrait) {
     .mainContent {
         flex-direction: column;
+    }
+
+    .exampleImage {
+        width: 25dvw;
+        height: auto;
+    }
+}
+
+@media (max-height: 550px) and (orientation: landscape) {
+    .exampleImage {
+        height: 30vh;
     }
 }
