@@ -279,8 +279,8 @@ body {
     }
 }
 
-/* @media (max-height: 550px) and (orientation: landscape),
-(max-width: 400px) and (orientation: portrait) {
+@media (max-height: 550px) and (orientation: landscape),
+(max-width: 450px) and (orientation: portrait) {
     .navbar {
         display: none;
     }
@@ -292,4 +292,4 @@ body {
     .navList {
         /* CHANGE IMAGES TO BE RESPONSIVELY SIZED AND STYLED */
     }
-} */
+}
