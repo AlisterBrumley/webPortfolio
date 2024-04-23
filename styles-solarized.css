@@ -267,10 +267,6 @@ body {
         width: 25dvw;
         height: auto;
     }
-
-    .mobLinks {
-        display: flex;
-    }
 }
 
 @media (max-height: 550px) and (orientation: landscape) {
@@ -295,5 +291,5 @@ body {
 
     .navList {
         /* CHANGE IMAGES TO BE RESPONSIVELY SIZED AND STYLED */
-    } */
-}
+    }
+} */
