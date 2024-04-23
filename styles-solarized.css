@@ -48,6 +48,7 @@ body {
     flex-direction: column;
     width: 100dvw;
     height: 100dvh;
+    font-size: 1.5dvh;
 }
 
 /* SHOULD AUTOMATICALLY APPLY ON CHANGE */
@@ -65,7 +66,6 @@ body {
     background-color: var(--backgroundHL);
     color: var(--text);
     height: 5dvh;
-    font-size: 1vh;
 }
 
 .navLeft {
@@ -127,14 +127,12 @@ body {
 }
 
 .nameTag {
-    font-size: 3em;
     font-weight: bolder;
     animation: opacity 1s, shadow 1s;
     filter: drop-shadow(16px 16px 30px var(--textLL)) opacity(100%)
 }
 
 .summary {
-    font-size: 1em;
     animation: opacity 5s;
 }
 
@@ -249,10 +247,18 @@ body {
     height: 10dvw;
 }
 
+.mobLinks {
+    display: none;
+}
+
 
 
 /* FOR MOBILE */
 @media (orientation: portrait) {
+    body {
+        font-size: 2dvh;
+    }
+
     .mainContent {
         flex-direction: column;
     }
@@ -261,10 +267,33 @@ body {
         width: 25dvw;
         height: auto;
     }
+
+    .mobLinks {
+        display: flex;
+    }
 }
 
 @media (max-height: 550px) and (orientation: landscape) {
     .exampleImage {
-        height: 30vh;
+        height: 30dvh;
     }
+
+    body {
+        font-size: 2dvw;
+    }
+}
+
+/* @media (max-height: 550px) and (orientation: landscape),
+(max-width: 400px) and (orientation: portrait) {
+    .navbar {
+        display: none;
+    }
+
+    .mobLinks {
+        display: flex;
+    }
+
+    .navList {
+        /* CHANGE IMAGES TO BE RESPONSIVELY SIZED AND STYLED */
+    } */
 }
