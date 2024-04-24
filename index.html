@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -14,13 +14,36 @@
         <div class="navLeft"><img src="img/ab logo.png" class="navLogo" alt="AlisterBrumley logo"></div>
         <div class="navRight">
             <ul class="navList">
-                <li><a href="doc/AlisterBrumley_Resume.docx"><img class="navIcon" src="img/doc.png"
-                            alt="document icon">Resume</a></li>
-                <li><a href="https://github.com/AlisterBrumley"><img class="navIcon" src="img/github-mark-white.png"
-                            alt="Github Logo"> Github</a></li>
-                <li><a href="https://www.linkedin.com/in/alister-brumley-04930b152/"><img class="navIcon"
-                            src="img/In-White-128@2x.png" alt="Linkedin Logo"> Linkedin</a></li>
-                <li><img class="navIcon" src="img/sun.png" alt="sun icon"> Light</li>
+                <li>
+                    <a href="doc/AlisterBrumley_Resume.docx">
+                        <picture>
+                            <source srcset="img/resumeDark.png" media="(prefers-color-scheme:dark)">
+                            <img class="navIcon" src="img/resumeLight.png" alt="document icon"> Resume
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://github.com/AlisterBrumley">
+                        <picture>
+                            <source srcset="img/githubDark.png" media="(prefers-color-scheme:dark)">
+                            <img class="navIcon" src="img/githubLight.png" alt="Github Logo"> Github
+                        </picture>
+                    </a>
+                </li>
+                <li>
+                    <a href="https://www.linkedin.com/in/alister-brumley-04930b152/">
+                        <picture>
+                            <source srcset="img/linkedDark.png" media="(prefers-color-scheme:dark)">
+                            <img class="navIcon" src="img/linkedLight.png" alt="Linkedin Logo"> Linkedin
+                        </picture>
+                    </a>
+                </li>
+                <li id="modeButton">
+                    <picture >
+                        <source srcset="img/darkMode.png" media="(prefers-color-scheme:dark)">
+                        <img class="navIcon" src="img/lightMode.png" alt="sun icon">
+                    </picture> Light
+                </li>
             </ul>
         </div>
     </div>

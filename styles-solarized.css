@@ -15,7 +15,21 @@
     --blue: #268bd2;
     --cyan: #2aa198;
     --green: #859900;
+}
 
+/* resetting vars for dark */
+/* @media (prefers-color-scheme: dark) {
+    :root {
+        --text: var(--base0);
+        --textHL: var(--base1);
+        --textLL: var(--base01);
+        --background: var(--base03);
+        --backgroundHL: var(--base02);
+    }
+} */
+
+/* light dark mode, used for switching */
+[data-theme="light"] {
     /* defaults for light mode */
     --text: var(--base00);
     --textHL: var(--base01);
@@ -24,15 +38,12 @@
     --backgroundHL: var(--base2);
 }
 
-/* resetting vars for dark */
-@media (prefers-color-scheme: dark) {
-    :root {
-        --text: var(--base0);
-        --textHL: var(--base1);
-        --textLL: var(--base01);
-        --background: var(--base03);
-        --backgroundHL: var(--base02);
-    }
+[data-theme="dark"] {
+    --text: var(--base0);
+    --textHL: var(--base1);
+    --textLL: var(--base01);
+    --background: var(--base03);
+    --backgroundHL: var(--base02);
 }
 
 html {
