@@ -128,7 +128,7 @@ body {
 
 .navLogo {
     height: 2vh;
-    filter: drop-shadow(3px 3px 5px);
+    filter: drop-shadow(3px 3px 5px var(--textLL));
 }
 
 .mainContent {
