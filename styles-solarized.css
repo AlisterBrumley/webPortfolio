@@ -300,9 +300,9 @@ body {
 
 @media (max-height: 550px) and (orientation: landscape),
 (max-width: 450px) and (orientation: portrait) {
-    .navbar {
+    /* .navbar {
         display: none;
-    }
+    } */
 
     .mobLinks {
         display: flex;
