@@ -59,7 +59,7 @@ body {
     flex-direction: column;
     width: 100dvw;
     height: 100dvh;
-    font-size: 1.5dvh;
+    font-size: 1dvw;
 }
 
 /* SHOULD AUTOMATICALLY APPLY ON CHANGE */
@@ -104,7 +104,7 @@ body {
 }
 
 .navList li:hover {
-    font-size: 2dvh;
+    font-size: 1.5dvw;
     transition-duration: 0.2s;
 }
 
