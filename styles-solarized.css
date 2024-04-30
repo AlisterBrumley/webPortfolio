@@ -146,6 +146,7 @@ body {
 }
 
 .nameTag {
+    font-size: 2dvw;
     font-weight: bolder;
     animation: opacity 1s, shadow 1s;
     filter: drop-shadow(16px 16px 30px var(--textLL)) opacity(100%)
@@ -276,6 +277,10 @@ body {
 @media (orientation: portrait) {
     body {
         font-size: 3dvw;
+    }
+
+    .nameTag {
+        font-size: 4dvw;
     }
 
     .mainContent {
