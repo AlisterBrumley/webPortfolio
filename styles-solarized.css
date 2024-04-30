@@ -256,6 +256,7 @@ body {
     background-color: var(--backgroundHL);
     width: 80%;
     border-radius: 30px;
+    display: none;
 }
 
 .summaryRow p {
