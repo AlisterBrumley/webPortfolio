@@ -263,7 +263,7 @@ body {
             transition-duration: 0.2s;
         }
     .exampleImage:hover {
-        transform: scale(1.3);
+        transform: scale(1.2);
         z-index: 1;
         position: relative;
         filter: none;
