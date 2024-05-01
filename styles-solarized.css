@@ -103,11 +103,6 @@ body {
     transition-duration: 0.2s
 }
 
-.navList li:hover {
-    transform: scale(1.1);
-    transition-duration: 0.2s;
-}
-
 .navList a {
     text-decoration: none;
     color: inherit;
@@ -215,38 +210,6 @@ body {
     height: 20dvh;
 }
 
-.exampleImage:hover {
-    transform: scale(1.3);
-    z-index: 1;
-    position: relative;
-    filter: none;
-    transition-duration: 0.2s;
-}
-
-#imgTopL:hover {
-    transform-origin: right bottom;
-}
-
-#imgTopC:hover {
-    transform-origin: center bottom;
-}
-
-#imgTopR:hover {
-    transform-origin: left bottom;
-}
-
-#imgBotL:hover {
-    transform-origin: right top;
-}
-
-#imgBotC:hover {
-    transform-origin: center top;
-}
-
-#imgBotR:hover {
-    transform-origin: left top;
-}
-
 .imgContainer img:active {
     filter: contrast(50%);
     transition-duration: 0ms;
@@ -294,12 +257,40 @@ body {
     }
 }
 
-@media (max-height: 550px) and (orientation: landscape) {
-    /* .exampleImage {
-        height: 30dvh;
-    } */
+@media (pointer: fine) {
+    .navList li:hover {
+            transform: scale(1.1);
+            transition-duration: 0.2s;
+        }
+    .exampleImage:hover {
+        transform: scale(1.3);
+        z-index: 1;
+        position: relative;
+        filter: none;
+        transition-duration: 0.2s;
+    }
 
-    /* body {
-        font-size: 2dvw;
-    } */
+    #imgTopL:hover {
+        transform-origin: right bottom;
+    }
+
+    #imgTopC:hover {
+        transform-origin: center bottom;
+    }
+
+    #imgTopR:hover {
+        transform-origin: left bottom;
+    }
+
+    #imgBotL:hover {
+        transform-origin: right top;
+    }
+
+    #imgBotC:hover {
+        transform-origin: center top;
+    }
+
+    #imgBotR:hover {
+        transform-origin: left top;
+    }
 }
