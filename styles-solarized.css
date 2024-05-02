@@ -257,6 +257,7 @@ body {
     }
 }
 
+/* FOR MOUSE ONLY */
 @media (pointer: fine) {
     .navList li:hover {
         transform: scale(1.1);
