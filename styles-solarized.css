@@ -259,9 +259,10 @@ body {
 
 @media (pointer: fine) {
     .navList li:hover {
-            transform: scale(1.1);
-            transition-duration: 0.2s;
-        }
+        transform: scale(1.1);
+        transition-duration: 0.2s;
+    }
+
     .exampleImage:hover {
         transform: scale(1.2);
         z-index: 1;
