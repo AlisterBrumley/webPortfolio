@@ -270,27 +270,27 @@ body {
         transition-duration: 0.2s;
     }
 
-    #imgTopL:hover {
+    .imgTopL:hover {
         transform-origin: right bottom;
     }
 
-    #imgTopC:hover {
+    .imgTopC:hover {
         transform-origin: center bottom;
     }
 
-    #imgTopR:hover {
+    .imgTopR:hover {
         transform-origin: left bottom;
     }
 
-    #imgBotL:hover {
+    .imgBotL:hover {
         transform-origin: right top;
     }
 
-    #imgBotC:hover {
+    .imgBotC:hover {
         transform-origin: center top;
     }
 
-    #imgBotR:hover {
+    .imgBotR:hover {
         transform-origin: left top;
     }
 }
