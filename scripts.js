@@ -1,7 +1,8 @@
-
+// VARIABLES
 // const summaries = document.getElementById("exampleSummary");
 const modeButton = document.getElementById("modeButton");
 
+// FUNCTIONS
 // for initializing theme color on load
 function modeInit() {
     const dark = "dark"
