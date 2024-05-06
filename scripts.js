@@ -1,5 +1,6 @@
 // VARIABLES
-// const summaries = document.getElementById("exampleSummary");
+const summary = document.getElementById("exampleSummary");
+const exampleImages = document.getElementsByClassName("exampleImage");
 const modeButton = document.getElementById("modeButton");
 
 // FUNCTIONS
@@ -73,18 +74,28 @@ let imageSummaries = {
     qdd: "This program allows the user to degrade audio samples to mimic settings on classic samplers, particularly for lo-fi musicians. I built it with python using the Tkinter GUI library, and it relies on ffmpeg for conversions. It's compatible with Windows, Mac and Linux, with compiled packages for all 3.",
     wmv: "This is a script that got out of hand! I started with a script that simply batch converts old .WMV files to .MP4's with h264 encoding, to save space on a media server. It ended up with a pretty feature rich python CLI program that provides several user options, has guards for overwriting and provides logging. It's tested with Windows, Mac and Linux.",
     esf2: "Soundfonts are a pretty dated sample container format, but the samples themselves are still worth having. This program extracts the samples from a .SF2 file, and places them all in seperate .WAV files. This required alot of file manipulation at the bit level, creating new headers and carefully copying data across. It's tested with Mac, Linux and even PowerPC Macs!",
+    scripts: "cha la head cha la!"
 }
 
 // MAIN FUNCTIONS
 modeInit();
 
 // EVENT LISTENS
+// tracking live changes to theme
+window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", theme => {
+    timeSwitch(theme);
+});
+
 // theme switch button
 modeButton.addEventListener("click", () => {
     modeSwitch();
 });
 
-// tracking live changes to theme
-window.matchMedia("(prefers-color-scheme: light)").addEventListener("change", theme => {
-    timeSwitch(theme);
-});
+// open image collapsible
+Array.from(exampleImages).forEach(image => {
+    image.addEventListener("click", () => {
+        console.log(imageSummaries[image.id])
+    });
+})
+
+//
