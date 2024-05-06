@@ -1,5 +1,4 @@
 // VARIABLES
-const summary = document.getElementById("exampleSummary");
 const exampleImages = document.getElementsByClassName("exampleImage");
 const modeButton = document.getElementById("modeButton");
 
@@ -93,8 +92,18 @@ modeButton.addEventListener("click", () => {
 
 // open image collapsible
 Array.from(exampleImages).forEach(image => {
+    const summary = document.getElementById("exampleSummary");
+    const summaryRow = document.getElementById("summaryRow")
     image.addEventListener("click", () => {
-        console.log(imageSummaries[image.id])
+        if (summaryRow.style.height == "15dvh" || summary.textContent == imageSummaries[image.id]) {
+            summaryRow.style.height = 0
+            summary.textContent = ""
+            // might have to function this
+        }
+        summary.style.display = "block";
+        summary.textContent = imageSummaries[image.id];
+        summaryRow.style.height = "15dvh";
+        summary.classList.add("summary")
     });
 })
 

@@ -148,7 +148,7 @@ body {
 }
 
 .summary {
-    animation: opacity 5s;
+    animation: opacity 3s;
 }
 
 @keyframes shadow {
@@ -191,8 +191,9 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 70%;
-    gap: 1dvh;
+    width: min-content;
+    gap: 0.5dvh;
+    border: red 1px solid;
 }
 
 .imgRow {
@@ -215,24 +216,27 @@ body {
     transition-duration: 0ms;
 }
 
-.summaryRow {
+#summaryRow {
     background-color: var(--backgroundHL);
-    width: 80%;
-    border-radius: 30px;
+    width: 100%;
+    border-radius: 1dvw;
+    height: 0;
+    transition: height 0.5s;
 }
 
-.inactive {
-    display: none;
+.big {
+    height: 15dvh;
+    transition: height 0.5s;
 }
 
-.active {
-    height: 10dvw;
+#exampleSummary {
+    overflow: hidden;
+    margin: 2dvh 1dvw;
 }
 
 .mobLinks {
     display: none;
 }
-
 
 
 /* FOR MOBILE */
