@@ -148,7 +148,7 @@ body {
 }
 
 .summary {
-    animation: opacity 3s;
+    animation: opacity 5s;
 }
 
 @keyframes shadow {
@@ -177,6 +177,17 @@ body {
 
 }
 
+@keyframes revOpacity {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+
+}
+
 .rightContent {
     flex: 2;
     display: flex;
@@ -192,7 +203,7 @@ body {
     justify-content: center;
     align-items: center;
     width: min-content;
-    gap: 0.5dvh;
+    gap: 1dvh;
     border: red 1px solid;
 }
 
@@ -224,14 +235,18 @@ body {
     transition: height 0.5s;
 }
 
-.big {
-    height: 15dvh;
-    transition: height 0.5s;
-}
-
 #exampleSummary {
+    display: none;
     overflow: hidden;
     margin: 2dvh 1dvw;
+}
+
+.fadeIn {
+    animation: opacity 1s;
+}
+
+.fadeOut {
+    animation: revOpacity 0.5s;
 }
 
 .mobLinks {
