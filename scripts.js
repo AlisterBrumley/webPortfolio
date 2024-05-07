@@ -69,6 +69,7 @@ function changeImgSrc(newMode, oldMode) {
 function fadeOut() {
     this.classList.remove("fadeOut")
     this.removeEventListener("animationend", fadeOut)
+    this.textContent = "";
 }
 
 function fadeIn() {
@@ -105,20 +106,14 @@ Array.from(exampleImages).forEach(image => {
     }
 
     image.addEventListener("click", () => {
-        let text = imageSummaries[image.id]
         if (summaryRow.style.height == "15dvh" && summary.textContent == imageSummaries[image.id]) {
             summary.classList.add("fadeOut");
             summary.addEventListener("animationend", fadeOut);
             summaryRow.style.height = "0";
-            summary.textContent = "";
         } else if (summaryRow.style.height == "15dvh" && summary.textContent != imageSummaries[image.id]) {
-            summary.classList.add("fadeOut");
-            summary.addEventListener("animationend", fadeOut);
-            summaryRow.style.height = "0";
-            summary.textContent = text;
-            summaryRow.style.height = "15dvh";
             summary.classList.add("fadeIn");
             summary.addEventListener("animationend", fadeIn);
+            summary.textContent = imageSummaries[image.id]
         } else {
             summary.style.display = "block";
             summary.textContent = imageSummaries[image.id];
