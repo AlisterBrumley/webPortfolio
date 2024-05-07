@@ -59,7 +59,7 @@ body {
     flex-direction: column;
     width: 100dvw;
     height: 100dvh;
-    font-size: 1dvw;
+    font-size: 2dvh;
 }
 
 /* SHOULD AUTOMATICALLY APPLY ON CHANGE */
@@ -141,7 +141,7 @@ body {
 }
 
 .nameTag {
-    font-size: 2dvw;
+    font-size: 4dvh;
     font-weight: bolder;
     animation: opacity 1s, shadow 1s;
     filter: drop-shadow(1dvw 1dvh 10px var(--textLL)) opacity(100%)
@@ -238,7 +238,6 @@ body {
 #exampleSummary {
     display: none;
     margin: 2dvh 1dvw;
-    font-size: 1dvw;
 }
 
 .fadeIn {
@@ -316,12 +315,12 @@ body {
 }
 
 @media (min-aspect-ratio: 2/1) and (max-height:700px) {
-    #exampleSummary {
-        font-size: 1dvw;
+    body {
+        font-size: 2.25dvh;
     }
 
     .exampleImage {
-        width: 30dvh;
-        height: auto;
+        height: 25dvh;
+        width: auto;
     }
 }
