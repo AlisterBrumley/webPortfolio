@@ -137,6 +137,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: flex-end;
     /* border: blue 1px solid; */
 }
 
@@ -257,6 +258,10 @@ body {
 @media (orientation: portrait) {
     body {
         font-size: 3dvw;
+    }
+
+    .leftContent {
+        align-items: normal;
     }
 
     .nameTag {
