@@ -17,17 +17,6 @@
     --green: #859900;
 }
 
-/* resetting vars for dark */
-/* @media (prefers-color-scheme: dark) {
-    :root {
-        --text: var(--base0);
-        --textHL: var(--base1);
-        --textLL: var(--base01);
-        --background: var(--base03);
-        --backgroundHL: var(--base02);
-    }
-} */
-
 /* light dark mode, used for switching */
 [data-theme="light"] {
     /* defaults for light mode */
@@ -61,15 +50,6 @@ body {
     height: 100dvh;
     font-size: 2dvh;
 }
-
-/* SHOULD AUTOMATICALLY APPLY ON CHANGE */
-/* 
-@media (prefers-color-scheme: dark) {
-    html {
-        background-color: var(--base03);
-        color: var(--base0);
-    }
-} */
 
 .navbar {
     display: flex;
@@ -129,7 +109,6 @@ body {
 .mainContent {
     display: flex;
     height: 100%;
-    /* border: red 1px solid; */
 }
 
 .leftContent {
@@ -138,7 +117,10 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
-    /* border: blue 1px solid; */
+}
+
+.textContainer {
+    text-align: right;
 }
 
 .nameTag {
@@ -195,7 +177,6 @@ body {
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* border: green 1px solid; */
 }
 
 .imgContainer {
@@ -239,6 +220,8 @@ body {
 #exampleSummary {
     display: none;
     margin: 2dvh 1dvw;
+    font-family: "Ubuntu Sans", "PT Sans", -apple-system, system-ui,
+        BlinkMacSystemFont, "Noto Sans", sans-serif;
 }
 
 .fadeIn {
@@ -256,16 +239,12 @@ body {
 
 /* FOR MOBILE */
 @media (orientation: portrait) {
-    body {
-        font-size: 3dvw;
+    .navLeft {
+        margin-left: 2dvw;
     }
 
     .leftContent {
-        align-items: normal;
-    }
-
-    .nameTag {
-        font-size: 4dvw;
+        margin-right: 12dvw;
     }
 
     .mainContent {
@@ -319,6 +298,7 @@ body {
     }
 }
 
+/* for small laptop screens */
 @media (min-aspect-ratio: 2/1) and (max-height:700px) {
     body {
         font-size: 2.25dvh;
