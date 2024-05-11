@@ -96,7 +96,6 @@ modeButton.addEventListener("click", () => {
 Array.from(exampleImages).forEach(image => {
     const summaryRow = document.getElementById("summaryRow")
     const summary = summaryRow.firstElementChild
-    const summaryHeight = "25dvh"
     let imageSummaries = {
         calc: "This site is a calculator that can do basic calculations and decimal functions, mimicking desktop calculators. I designed it to be minimal and easy to understand. It also responds to system/browser dark mode preferences.",
         etch: "This site is an etch-a-sketch like, with a resizeable grid drawn in by Javascript, using Flexbox. I also added colored etching, as well as responsiveness to the system/browser dark mode preferences.",
@@ -115,11 +114,11 @@ Array.from(exampleImages).forEach(image => {
             summary.classList.add("fadeIn");
             summary.addEventListener("animationend", fadeIn);
             summary.textContent = imageSummaries[image.id]
-            summaryRow.style.height = (summary.scrollHeight + 50) + "px";
+            summaryRow.style.height = (summary.scrollHeight + 22) + "px";
         } else {
             summary.style.display = "block";
             summary.textContent = imageSummaries[image.id];
-            summaryRow.style.height = (summary.scrollHeight + 50) + "px";
+            summaryRow.style.height = (summary.scrollHeight + 22) + "px";
             summary.classList.add("fadeIn");
             summary.addEventListener("animationend", fadeIn);
         };
