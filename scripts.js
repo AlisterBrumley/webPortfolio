@@ -106,21 +106,37 @@ Array.from(exampleImages).forEach(image => {
         scripts: "I'm a big proponent of working smarter, not harder, so when I encounter a task that I have to repeat, I try automate it with a script. I've even made scripts to make script creation faster, to maximize efficiency!"
     }
 
-    image.addEventListener("click", () => {
-        if (summaryRow.style.height == summaryHeight && summary.textContent == imageSummaries[image.id]) {
+    image.addEventListener("click", (event) => {
+        if (summaryRow.style.height > "0" && summary.textContent == imageSummaries[image.id]) {
             summary.classList.add("fadeOut");
             summary.addEventListener("animationend", fadeOut);
             summaryRow.style.height = "0";
-        } else if (summaryRow.style.height == summaryHeight && summary.textContent != imageSummaries[image.id]) {
+        } else if (summaryRow.style.height > "0" && summary.textContent != imageSummaries[image.id]) {
             summary.classList.add("fadeIn");
             summary.addEventListener("animationend", fadeIn);
             summary.textContent = imageSummaries[image.id]
+            summaryRow.style.height = (summary.scrollHeight + 50) + "px";
         } else {
             summary.style.display = "block";
             summary.textContent = imageSummaries[image.id];
-            summaryRow.style.height = summaryHeight;
+            summaryRow.style.height = (summary.scrollHeight + 50) + "px";
             summary.classList.add("fadeIn");
             summary.addEventListener("animationend", fadeIn);
         };
+
+        // to stop interference with body closing
+        event.stopPropagation()
     });
-})
+});
+
+// close summary when clicking outside the image/summary box
+document.body.addEventListener("click", () => {
+    const summaryRow = document.getElementById("summaryRow")
+    const summary = summaryRow.firstElementChild
+    summary.classList.add("fadeOut");
+    summary.addEventListener("animationend", fadeOut);
+    summaryRow.style.height = "0";
+});
+
+// stops event bubbling to body, so you can click on summary box
+summaryRow.addEventListener("click", (event) => event.stopPropagation());

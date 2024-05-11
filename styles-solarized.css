@@ -219,7 +219,7 @@ body {
 
 #exampleSummary {
     display: none;
-    margin: 2dvh 1dvw;
+    margin: 1dvh 1dvw;
     font-family: "Ubuntu Sans", "PT Sans", -apple-system, system-ui,
         BlinkMacSystemFont, "Noto Sans", sans-serif;
 }
