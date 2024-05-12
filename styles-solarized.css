@@ -220,7 +220,7 @@ body {
 #exampleSummary {
     display: none;
     margin: 1dvh 1dvw;
-    font-family: "Ubuntu Sans", "PT Sans", -apple-system, system-ui,
+    font-family: "PT Sans", -apple-system, system-ui,
         BlinkMacSystemFont, "Noto Sans", sans-serif;
 }
 
