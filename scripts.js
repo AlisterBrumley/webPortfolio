@@ -97,7 +97,7 @@ Array.from(exampleImages).forEach(image => {
     const summaryRow = document.getElementById("summaryRow");
     const summary = summaryRow.firstElementChild;
     let summaryContent = {
-        sum: {
+        blurb: {
             calc: "This site is a calculator that can do basic calculations and decimal functions, mimicking desktop calculators. I designed it to be minimal and easy to understand. It also responds to system/browser dark mode preferences. ",
             etch: "This site is an etch-a-sketch like, with a resizeable grid drawn in by Javascript, using Flexbox. I also added colored etching, as well as responsiveness to the system/browser dark mode preferences. ",
             qdd: "This program allows the user to degrade audio samples to mimic settings on classic samplers, particularly for lo-fi musicians. I built it with python using the Tkinter GUI library, and it relies on ffmpeg for conversions. It's compatible with Windows, Mac and Linux, with compiled packages for all 3. ",
@@ -116,16 +116,16 @@ Array.from(exampleImages).forEach(image => {
     }
 
     image.addEventListener("click", (event) => {
-        if (summaryRow.style.height > "0" && summary.textContent == summaryContent[image.id]) {
+        if (summaryRow.style.height > "0" && summary.textContent == (summaryContent.blurb[image.id] + "Link")) {
             summary.classList.add("fadeOut");
             summary.addEventListener("animationend", fadeOut);
             summaryRow.style.height = "0";
-        } else if (summaryRow.style.height > "0" && summary.textContent != summaryContent[image.id]) {
+        } else if (summaryRow.style.height > "0" && summary.textContent == (summaryContent.blurb[image.id] + "Link")) {
             const link = summary.firstElementChild;
             link.setAttribute("href", summaryContent.link[image.id]);
             summary.classList.add("fadeIn");
             summary.addEventListener("animationend", fadeIn);
-            summary.textContent = summaryContent.sum[image.id];
+            summary.textContent = summaryContent.blurb[image.id];
             summary.appendChild(link);
             summaryRow.style.height = (summary.scrollHeight + 22) + "px";
         } else {
@@ -133,7 +133,7 @@ Array.from(exampleImages).forEach(image => {
             link.textContent = "Link";
             link.setAttribute("href", summaryContent.link[image.id]);
             summary.style.display = "block";
-            summary.textContent = summaryContent.sum[image.id];
+            summary.textContent = summaryContent.blurb[image.id];
             summary.appendChild(link);
             summaryRow.style.height = (summary.scrollHeight + 22) + "px";
             summary.classList.add("fadeIn");
