@@ -116,24 +116,27 @@ Array.from(exampleImages).forEach(image => {
     }
 
     image.addEventListener("click", (event) => {
-        if (summaryRow.style.height > "0" && summary.textContent == (summaryContent.blurb[image.id] + "Link")) {
+        const sumBlurb = summaryContent.blurb[image.id]
+        const sumLink = summaryContent.link[image.id]
+        const sumChecker = sumBlurb + "Link"
+        if (summaryRow.style.height > "0" && summary.textContent == sumChecker) {
             summary.classList.add("fadeOut");
             summary.addEventListener("animationend", fadeOut);
             summaryRow.style.height = "0";
-        } else if (summaryRow.style.height > "0" && summary.textContent == (summaryContent.blurb[image.id] + "Link")) {
+        } else if (summaryRow.style.height > "0" && summary.textContent != sumChecker) {
             const link = summary.firstElementChild;
-            link.setAttribute("href", summaryContent.link[image.id]);
+            link.setAttribute("href", sumLink);
             summary.classList.add("fadeIn");
             summary.addEventListener("animationend", fadeIn);
-            summary.textContent = summaryContent.blurb[image.id];
+            summary.textContent = sumBlurb;
             summary.appendChild(link);
             summaryRow.style.height = (summary.scrollHeight + 22) + "px";
         } else {
             const link = document.createElement("a");
             link.textContent = "Link";
-            link.setAttribute("href", summaryContent.link[image.id]);
+            link.setAttribute("href", sumLink);
             summary.style.display = "block";
-            summary.textContent = summaryContent.blurb[image.id];
+            summary.textContent = sumBlurb;
             summary.appendChild(link);
             summaryRow.style.height = (summary.scrollHeight + 22) + "px";
             summary.classList.add("fadeIn");
