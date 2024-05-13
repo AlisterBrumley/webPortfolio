@@ -226,6 +226,7 @@ body {
 
 #exampleSummary a {
     text-decoration: none;
+    color: var(--textLL);
 }
 
 

@@ -97,6 +97,14 @@ Array.from(exampleImages).forEach(image => {
     const summaryRow = document.getElementById("summaryRow");
     const summary = summaryRow.firstElementChild;
     let summaryContent = {
+        title: {
+            calc: "Calculator",
+            etch: "Etch-a-Sketch",
+            qdd: "Audio Degrader",
+            wmv: "WMV to MP4 converter",
+            esf2: "Sound Font Extractor",
+            scripts: "Shell Scripts"
+        },
         blurb: {
             calc: "This site is a calculator that can do basic calculations and decimal functions, mimicking desktop calculators. I designed it to be minimal and easy to understand. It also responds to system/browser dark mode preferences. ",
             etch: "This site is an etch-a-sketch like, with a resizeable grid drawn in by Javascript, using Flexbox. I also added colored etching, as well as responsiveness to the system/browser dark mode preferences. ",
@@ -116,9 +124,11 @@ Array.from(exampleImages).forEach(image => {
     }
 
     image.addEventListener("click", (event) => {
-        const sumBlurb = summaryContent.blurb[image.id]
-        const sumLink = summaryContent.link[image.id]
-        const sumChecker = sumBlurb + "Link"
+        const sumBlurb = summaryContent.blurb[image.id];
+        const sumLink = summaryContent.link[image.id];
+        const sumTitle = summaryContent.title[image.id];
+        const sumChecker = sumTitle + sumBlurb
+
         if (summaryRow.style.height > "0" && summary.textContent == sumChecker) {
             summary.classList.add("fadeOut");
             summary.addEventListener("animationend", fadeOut);
