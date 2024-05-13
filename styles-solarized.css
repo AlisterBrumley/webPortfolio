@@ -17,17 +17,6 @@
     --green: #859900;
 }
 
-/* resetting vars for dark */
-/* @media (prefers-color-scheme: dark) {
-    :root {
-        --text: var(--base0);
-        --textHL: var(--base1);
-        --textLL: var(--base01);
-        --background: var(--base03);
-        --backgroundHL: var(--base02);
-    }
-} */
-
 /* light dark mode, used for switching */
 [data-theme="light"] {
     /* defaults for light mode */
@@ -59,17 +48,8 @@ body {
     flex-direction: column;
     width: 100dvw;
     height: 100dvh;
-    font-size: 1dvw;
+    font-size: 2dvh;
 }
-
-/* SHOULD AUTOMATICALLY APPLY ON CHANGE */
-/* 
-@media (prefers-color-scheme: dark) {
-    html {
-        background-color: var(--base03);
-        color: var(--base0);
-    }
-} */
 
 .navbar {
     display: flex;
@@ -129,7 +109,6 @@ body {
 .mainContent {
     display: flex;
     height: 100%;
-    /* border: red 1px solid; */
 }
 
 .leftContent {
@@ -137,11 +116,15 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* border: blue 1px solid; */
+    align-items: flex-end;
+}
+
+.textContainer {
+    text-align: right;
 }
 
 .nameTag {
-    font-size: 2dvw;
+    font-size: 4dvh;
     font-weight: bolder;
     animation: opacity 1s, shadow 1s;
     filter: drop-shadow(1dvw 1dvh 10px var(--textLL)) opacity(100%)
@@ -177,13 +160,23 @@ body {
 
 }
 
+@keyframes revOpacity {
+    0% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 0%;
+    }
+
+}
+
 .rightContent {
     flex: 2;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    /* border: green 1px solid; */
 }
 
 .imgContainer {
@@ -191,7 +184,7 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 70%;
+    width: min-content;
     gap: 1dvh;
 }
 
@@ -210,24 +203,38 @@ body {
     height: 20dvh;
 }
 
-.imgContainer img:active {
+.exampleImage:active {
     filter: contrast(50%);
     transition-duration: 0ms;
 }
 
-.summaryRow {
+#summaryRow {
     background-color: var(--backgroundHL);
-    width: 80%;
-    border-radius: 30px;
-    display: none;
+    width: 100%;
+    border-radius: 1dvw;
+    height: 0;
+    transition: height 0.5s;
+    overflow: auto;
 }
 
-.summaryRow p {
+#exampleSummary {
     display: none;
+    margin: 1dvh 1dvw;
+    font-family: "Ubuntu Sans", "PT Sans", -apple-system, system-ui,
+        BlinkMacSystemFont, "Noto Sans", sans-serif;
 }
 
-.active {
-    height: 10dvw;
+#exampleSummary a {
+    text-decoration: none;
+}
+
+
+.fadeIn {
+    animation: opacity 1s;
+}
+
+.fadeOut {
+    animation: revOpacity 0.5s;
 }
 
 .mobLinks {
@@ -235,15 +242,14 @@ body {
 }
 
 
-
 /* FOR MOBILE */
 @media (orientation: portrait) {
-    body {
-        font-size: 3dvw;
+    .navLeft {
+        margin-left: 2dvw;
     }
 
-    .nameTag {
-        font-size: 4dvw;
+    .leftContent {
+        margin-right: 12dvw;
     }
 
     .mainContent {
@@ -294,5 +300,17 @@ body {
 
     .imgBotR:hover {
         transform-origin: left top;
+    }
+}
+
+/* for small laptop screens */
+@media (min-aspect-ratio: 2/1) and (max-height:700px) {
+    body {
+        font-size: 2.25dvh;
+    }
+
+    .exampleImage {
+        height: 25dvh;
+        width: auto;
     }
 }
