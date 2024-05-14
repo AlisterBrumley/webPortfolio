@@ -133,21 +133,13 @@ Array.from(exampleImages).forEach(image => {
             summary.classList.add("fadeOut");
             summary.addEventListener("animationend", fadeOut);
             summaryRow.style.height = "0";
-        } else if (summaryRow.style.height > "0" && summary.textContent != sumChecker) {
-            const link = summary.firstElementChild;
-            link.setAttribute("href", sumLink);
-            summary.classList.add("fadeIn");
-            summary.addEventListener("animationend", fadeIn);
-            summary.textContent = sumBlurb;
-            summary.appendChild(link);
-            summaryRow.style.height = (summary.scrollHeight + 22) + "px";
         } else {
             const link = document.createElement("a");
-            link.textContent = "Link";
+            link.textContent = sumTitle;
             link.setAttribute("href", sumLink);
-            summary.style.display = "block";
+            summary.style.display = "flex";
             summary.textContent = sumBlurb;
-            summary.appendChild(link);
+            summary.insertBefore(link, summary.firstChild);;
             summaryRow.style.height = (summary.scrollHeight + 22) + "px";
             summary.classList.add("fadeIn");
             summary.addEventListener("animationend", fadeIn);

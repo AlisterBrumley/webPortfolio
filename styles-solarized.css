@@ -219,14 +219,15 @@ body {
 
 #exampleSummary {
     display: none;
+    flex-direction: column;
     margin: 1dvh 1dvw;
     font-family: "Ubuntu Sans", "PT Sans", -apple-system, system-ui,
         BlinkMacSystemFont, "Noto Sans", sans-serif;
 }
 
 #exampleSummary a {
-    text-decoration: none;
-    color: var(--textLL);
+    font-weight: bold;
+    color: var(--textHL);
 }
 
 
