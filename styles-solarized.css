@@ -127,10 +127,12 @@ body {
     font-size: 4dvh;
     font-weight: bolder;
     animation: opacity 1s, shadow 1s;
-    filter: drop-shadow(1dvw 1dvh 10px var(--textLL)) opacity(100%)
+    filter: drop-shadow(1dvw 1dvh 10px var(--textLL)) opacity(100%);
+    margin: 1em 0;
 }
 
 .summary {
+    margin: 1em 0;
     animation: opacity 5s;
 }
 
@@ -220,14 +222,17 @@ body {
 #exampleSummary {
     display: none;
     flex-direction: column;
-    margin: 1dvh 1dvw;
+    padding: 1dvh 0;
+    margin: 1dvh 1dvw 0 1dvw;
     font-family: "Ubuntu Sans", "PT Sans", -apple-system, system-ui,
         BlinkMacSystemFont, "Noto Sans", sans-serif;
+    overflow: auto;
 }
 
 #exampleSummary a {
     font-weight: bold;
     color: var(--textHL);
+    margin-bottom: 0.5dvh;
 }
 
 
