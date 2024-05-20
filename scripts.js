@@ -127,7 +127,9 @@ Array.from(exampleImages).forEach(image => {
         const sumBlurb = summaryContent.blurb[image.id];
         const sumLink = summaryContent.link[image.id];
         const sumTitle = summaryContent.title[image.id];
-        const sumChecker = sumTitle + sumBlurb
+        const sumChecker = sumTitle + sumBlurb;
+        const boxBuffer = window.getComputedStyle(summary).getPropertyValue("padding-bottom").replace("px", "");
+        // console.log(boxBuffer)
 
         if (summaryRow.style.height > "0" && summary.textContent == sumChecker) {
             summary.classList.add("fadeOut");
@@ -139,8 +141,8 @@ Array.from(exampleImages).forEach(image => {
             link.setAttribute("href", sumLink);
             summary.style.display = "flex";
             summary.textContent = sumBlurb;
-            summary.insertBefore(link, summary.firstChild);;
-            summaryRow.style.height = (summary.scrollHeight + 22) + "px";
+            summary.insertBefore(link, summary.firstChild);
+            summaryRow.style.height =  (summary.scrollHeight + +boxBuffer) + "px";
             summary.classList.add("fadeIn");
             summary.addEventListener("animationend", fadeIn);
         };
