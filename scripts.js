@@ -97,13 +97,21 @@ Array.from(exampleImages).forEach(image => {
     const summaryRow = document.getElementById("summaryRow");
     const summary = summaryRow.firstElementChild;
     let summaryContent = {
+        title: {
+            calc: "Calculator",
+            etch: "Etch-a-Sketch",
+            qdd: "Audio Degrader",
+            wmv: "WMV to MP4 converter",
+            esf2: "Sound Font Extractor",
+            scripts: "Shell Scripts"
+        },
         blurb: {
-            calc: "This site is a calculator that can do basic calculations and decimal functions, mimicking desktop calculators. I designed it to be minimal and easy to understand. It also responds to system/browser dark mode preferences. ",
-            etch: "This site is an etch-a-sketch like, with a resizeable grid drawn in by Javascript, using Flexbox. I also added colored etching, as well as responsiveness to the system/browser dark mode preferences. ",
-            qdd: "This program allows the user to degrade audio samples to mimic settings on classic samplers, particularly for lo-fi musicians. I built it with python using the Tkinter GUI library, and it relies on ffmpeg for conversions. It's compatible with Windows, Mac and Linux, with compiled packages for all 3. ",
-            wmv: "This is a script that got out of hand! I started with a script that simply batch converts old .WMV files to .MP4's with h264 encoding, to save space on a media server. It ended up with a pretty feature rich python CLI program that provides several user options, has guards for overwriting and provides logging. It's tested with Windows, Mac and Linux. ",
-            esf2: "Soundfonts are a pretty dated sample container format, but the samples themselves are still worth having. This program extracts the samples from a .SF2 file, and places them all in seperate .WAV files. This required alot of file manipulation at the bit level, creating new headers and carefully copying data across. It's tested with Mac, Linux and even PowerPC Macs! ",
-            scripts: "I'm a big proponent of working smarter, not harder, so when I encounter a task that I have to repeat, I try automate it with a script. I've even made scripts to make script creation faster, to maximize efficiency! ",
+            calc: "This site is a calculator that can do basic calculations and decimal functions, mimicking desktop calculators. I designed it to be minimal and easy to understand. It also responds to system/browser dark mode preferences.",
+            etch: "This site is an etch-a-sketch like, with a resizeable grid drawn in by Javascript, using Flexbox. I also added colored etching, as well as responsiveness to the system/browser dark mode preferences.",
+            qdd: "This program allows the user to degrade audio samples to mimic settings on classic samplers, particularly for lo-fi musicians. I built it with python using the Tkinter GUI library, and it relies on ffmpeg for conversions. It's compatible with Windows, Mac and Linux, with compiled packages for all 3.",
+            wmv: "This is a script that got out of hand! I started with a script that simply batch converts old .WMV files to .MP4's with h264 encoding, to save space on a media server. It ended up with a pretty feature rich python CLI program that provides several user options, has guards for overwriting and provides logging. It's tested with Windows, Mac and Linux.",
+            esf2: "Soundfonts are a pretty dated sample container format, but the samples themselves are still worth having. This program extracts the samples from a .SF2 file, and places them all in seperate .WAV files. This required alot of file manipulation at the bit level, creating new headers and carefully copying data across. It's tested with Mac, Linux and even PowerPC Macs!",
+            scripts: "I'm a big proponent of working smarter, not harder, so when I encounter a task that I have to repeat, I try automate it with a script. I've even made scripts to make script creation faster, to maximize efficiency!",
         },
         link: {
             calc: "https://alisterbrumley.github.io/js-calculator/",
@@ -116,29 +124,25 @@ Array.from(exampleImages).forEach(image => {
     }
 
     image.addEventListener("click", (event) => {
-        const sumBlurb = summaryContent.blurb[image.id]
-        const sumLink = summaryContent.link[image.id]
-        const sumChecker = sumBlurb + "Link"
+        const sumBlurb = summaryContent.blurb[image.id];
+        const sumLink = summaryContent.link[image.id];
+        const sumTitle = summaryContent.title[image.id];
+        const sumChecker = sumTitle + sumBlurb;
+        const boxBuffer = window.getComputedStyle(summary).getPropertyValue("padding-bottom").replace("px", "");
+        // console.log(boxBuffer)
+
         if (summaryRow.style.height > "0" && summary.textContent == sumChecker) {
             summary.classList.add("fadeOut");
             summary.addEventListener("animationend", fadeOut);
             summaryRow.style.height = "0";
-        } else if (summaryRow.style.height > "0" && summary.textContent != sumChecker) {
-            const link = summary.firstElementChild;
-            link.setAttribute("href", sumLink);
-            summary.classList.add("fadeIn");
-            summary.addEventListener("animationend", fadeIn);
-            summary.textContent = sumBlurb;
-            summary.appendChild(link);
-            summaryRow.style.height = (summary.scrollHeight + 22) + "px";
         } else {
             const link = document.createElement("a");
-            link.textContent = "Link";
+            link.textContent = sumTitle;
             link.setAttribute("href", sumLink);
-            summary.style.display = "block";
+            summary.style.display = "flex";
             summary.textContent = sumBlurb;
-            summary.appendChild(link);
-            summaryRow.style.height = (summary.scrollHeight + 22) + "px";
+            summary.insertBefore(link, summary.firstChild);
+            summaryRow.style.height =  (summary.scrollHeight + +boxBuffer) + "px";
             summary.classList.add("fadeIn");
             summary.addEventListener("animationend", fadeIn);
         };

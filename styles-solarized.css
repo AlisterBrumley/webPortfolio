@@ -102,12 +102,13 @@ body {
 }
 
 .navLogo {
-    height: 2.5dvh;
+    height: 1.3em;
     filter: drop-shadow(3px 3px 5px var(--textLL));
 }
 
 .mainContent {
     display: flex;
+    flex-wrap: wrap;
     height: 100%;
 }
 
@@ -117,20 +118,25 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: flex-end;
+    margin: 2vw;
 }
 
 .textContainer {
     text-align: right;
+    /* TODO USE THIS TO FIX TEXT WRAPPING */
+    width: 90%;
 }
 
 .nameTag {
-    font-size: 4dvh;
+    font-size: 5dvh;
     font-weight: bolder;
     animation: opacity 1s, shadow 1s;
-    filter: drop-shadow(1dvw 1dvh 10px var(--textLL)) opacity(100%)
+    filter: drop-shadow(1dvw 1dvh 10px var(--textLL)) opacity(100%);
+    margin: 1em 0;
 }
 
 .summary {
+    margin: 1em 0;
     animation: opacity 5s;
 }
 
@@ -214,18 +220,22 @@ body {
     border-radius: 1dvw;
     height: 0;
     transition: height 0.5s;
-    overflow: auto;
+
 }
 
 #exampleSummary {
     display: none;
-    margin: 1dvh 1dvw;
+    flex-direction: column;
+    padding: 1.5dvh 0 1dvh;
+    margin: 0 1dvw;
     font-family: "Ubuntu Sans", "PT Sans", -apple-system, system-ui,
         BlinkMacSystemFont, "Noto Sans", sans-serif;
 }
 
 #exampleSummary a {
-    text-decoration: none;
+    font-weight: bold;
+    color: var(--textHL);
+    margin-bottom: 0.5dvh;
 }
 
 
@@ -243,7 +253,7 @@ body {
 
 
 /* FOR MOBILE */
-@media (orientation: portrait) {
+@media (orientation: portrait) or (max-aspect-ratio: 1.05/1) {
     .navLeft {
         margin-left: 2dvw;
     }
@@ -304,9 +314,9 @@ body {
 }
 
 /* for small laptop screens */
-@media (min-aspect-ratio: 2/1) and (max-height:700px) {
+@media (orientation: landscape) and (max-height: 800px) {
     body {
-        font-size: 2.25dvh;
+        font-size: 2.5dvh;
     }
 
     .exampleImage {
