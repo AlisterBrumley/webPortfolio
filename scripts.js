@@ -106,12 +106,12 @@ Array.from(exampleImages).forEach(image => {
             cursehang: "Hangman"
         },
         blurb: {
-            calc: "This site is a calculator that can do basic calculations and decimal functions, mimicking desktop calculators. I designed it to be minimal and easy to understand. It also responds to system/browser dark mode preferences.",
-            etch: "This site is an etch-a-sketch like, with a resizeable grid drawn in by Javascript, using Flexbox. I also added colored etching, as well as responsiveness to the system/browser dark mode preferences.",
-            qdd: "This program allows the user to degrade audio samples to mimic settings on classic samplers, particularly for lo-fi musicians. I built it with python using the Tkinter GUI library, and it relies on ffmpeg for conversions. It's compatible with Windows, Mac and Linux, with compiled packages for all 3.",
-            wmv: "This is a script that got out of hand! I started with a script that simply batch converts old .WMV files to .MP4's with h264 encoding, to save space on a media server. It ended up with a pretty feature rich python CLI program that provides several user options, has guards for overwriting and provides logging. It's tested with Windows, Mac and Linux.",
-            esf2: "Soundfonts are a pretty dated sample container format, but the samples themselves are still worth having. This program extracts the samples from a .SF2 file, and places them all in seperate .WAV files. This required alot of file manipulation at the bit level, creating new headers and carefully copying data across. It's tested with Mac, Linux and even PowerPC Macs!",
-            cursehang: "Hangman, using the ncurses TUI library"
+            calc: "A simple web calculator that can do basic calculations and decimal functions, mimicking desktop calculators. It also responds to system/browser dark mode preferences.",
+            etch: "This site is an etch-a-sketch like, with a resizeable grid and colored etching. It also responds to system/browser dark mode preferences.",
+            qdd: "Degrades audio samples to mimic classic samplers, useful for lo-fi musicians. Uses the Tkinter GUI library, and FFMPEG for conversions. Compatible with Windows, Mac and Linux.",
+            wmv: "Script to convert .WMV files to .MP4 with h264 encoding using FFMPEG. Has several user settings and logging options. Compatbile with Windows, Mac and Linux.",
+            esf2: "This program extracts the samples from a .SF2 file, and places them all in .WAV files. This required alot of file manipulation at the bit level. Compatible with Mac, Linux and even PowerPC Macs!",
+            cursehang: "A simple Hangman game, using an 850 word dictionary. Built using the ncurses TUI library.  Compatible with Windows, Mac and Linux."
         },
         link: {
             calc: "https://alisterbrumley.github.io/js-calculator/",
@@ -142,7 +142,7 @@ Array.from(exampleImages).forEach(image => {
             summary.style.display = "flex";
             summary.textContent = sumBlurb;
             summary.insertBefore(link, summary.firstChild);
-            summaryRow.style.height =  (summary.scrollHeight + +boxBuffer) + "px";
+            summaryRow.style.height = (summary.scrollHeight + +boxBuffer) + "px";
             summary.classList.add("fadeIn");
             summary.addEventListener("animationend", fadeIn);
         };
