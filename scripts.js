@@ -109,7 +109,7 @@ Array.from(exampleImages).forEach(image => {
             calc: "A simple web calculator that can do basic calculations and decimal functions, mimicking desktop calculators. It also responds to system/browser dark mode preferences.",
             etch: "This site is an etch-a-sketch like, with a resizeable grid and colored etching. It also responds to system/browser dark mode preferences.",
             qdd: "Degrades audio samples to mimic classic samplers, useful for lo-fi musicians. Uses the Tkinter GUI library, and FFMPEG for conversions. Compatible with Windows, Mac and Linux.",
-            wmv: "Script to convert .WMV files to .MP4 with h264 encoding using FFMPEG. Has several user settings and logging options. Compatbile with Windows, Mac and Linux.",
+            wmv: "Script to convert .WMV files to .MP4 with h264 encoding using FFMPEG. Has several user settings and logging options. Compatible with Windows, Mac and Linux.",
             esf2: "This program extracts the samples from a .SF2 file, and places them all in .WAV files. This required alot of file manipulation at the bit level. Compatible with Mac, Linux and even PowerPC Macs!",
             cursehang: "A simple Hangman game, using an 850 word dictionary. Built using the ncurses TUI library.  Compatible with Windows, Mac and Linux."
         },
