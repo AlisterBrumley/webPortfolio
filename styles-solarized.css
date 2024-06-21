@@ -220,15 +220,14 @@ body {
     border-radius: 1dvw;
     height: 0;
     transition: height 0.5s;
-
 }
 
 #exampleSummary {
     display: none;
     flex-direction: column;
     padding: 1.5dvh 0 1dvh;
-    margin: 0 1dvw;
-    font-family: "Ubuntu Sans", "PT Sans", -apple-system, system-ui,
+    margin: 0 1dvw ;
+    font-family: "PT Sans", -apple-system, system-ui,
         BlinkMacSystemFont, "Noto Sans", sans-serif;
 }
 
@@ -237,7 +236,6 @@ body {
     color: var(--textHL);
     margin-bottom: 0.5dvh;
 }
-
 
 .fadeIn {
     animation: opacity 1s;
